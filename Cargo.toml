@@ -1,0 +1,19 @@
+[package]
+name = "xgov"
+authors = ["Travis Brown <travisrobertbrown@gmail.com>"]
+homepage = "https://github.com/travisbrown/xgov"
+repository = "https://github.com/travisbrown/xgov"
+keywords = ["twitter"]
+edition = "2024"
+license = "GPL-3.0-only"
+version = "0.1.0"
+
+[dependencies]
+chrono = { version = "0.4", features = ["serde"] }
+cli-helpers = "0.1"
+csv = "1"
+log = "0.4"
+serde = { version = "1", features = ["derive"] }
+serde-field-attributes = "0.2"
+serde_json = { version = "1", features = ["preserve_order"] }
+thiserror = "2"
