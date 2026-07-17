@@ -14,6 +14,6 @@ cli-helpers = "0.1"
 csv = "1"
 log = "0.4"
 serde = { version = "1", features = ["derive"] }
-serde-field-attributes = "0.3"
+serde-field-attributes = "0.7"
 serde_json = { version = "1", features = ["preserve_order"] }
 thiserror = "2"
