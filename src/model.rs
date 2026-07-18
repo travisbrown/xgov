@@ -24,16 +24,21 @@ pub struct NoteEntry {
 
 #[derive(Clone, Debug, Eq, Ord, PartialEq, PartialOrd, serde::Deserialize, serde::Serialize)]
 pub struct Account {
+    #[serde(rename = "Twitter ID")]
     pub id: u64,
-    #[serde(with = "ts_seconds")]
+    #[serde(rename = "Added", with = "ts_seconds")]
+    pub added_timestamp: DateTime<Utc>,
+    #[serde(rename = "Observed", with = "ts_seconds")]
     pub timestamp: DateTime<Utc>,
+    #[serde(rename = "Screen name")]
     pub screen_name: String,
+    #[serde(rename = "Followers")]
     pub follower_count: usize,
 }
 
 pub fn accounts<P: AsRef<Path>>(path: P) -> Result<Vec<Account>, csv::Error> {
     csv::ReaderBuilder::new()
-        .has_headers(false)
+        .has_headers(true)
         .from_path(path)?
         .deserialize()
         .collect()

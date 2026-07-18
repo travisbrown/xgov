@@ -51,9 +51,10 @@ fn main() -> Result<(), Error> {
                     let note_entry = result?;
 
                     if let Some(user_id) = note_entry.user_id
-                        && ids.contains(&user_id) {
-                            note_entries.push(note_entry);
-                        }
+                        && ids.contains(&user_id)
+                    {
+                        note_entries.push(note_entry);
+                    }
                 }
             }
 
